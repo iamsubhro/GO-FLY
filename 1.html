@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+<title>GO-FLY</title>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+
+<style type="text/css">
+	body  {
+              background-image: url("back.png");
+            background-color: #cccccc;
+            }
+
+ /* Shared */
+.loginBtn {
+  box-sizing: border-box;
+  position: relative;
+  /* width: 13em;  - apply for fixed size */
+  margin: 0.2em;
+  padding: 0 26px 0 41px;
+  border: none;
+  text-align: left;
+  line-height: 34px;
+  white-space: nowrap;
+  border-radius: 0.2em;
+  font-size: 16px;
+  color: #FFF;
+}
+.loginBtn:before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 100%;
+}
+.loginBtn:focus {
+  outline: none;
+}
+.loginBtn:active {
+  box-shadow: inset 0 0 0 32px rgba(0,0,0,0.1);
+}
+
+
+/* Facebook */
+.loginBtn--facebook {
+  background-color: #4C69BA;
+  background-image: linear-gradient(#4C69BA, #3B55A0);
+  /*font-family: "Helvetica neue", Helvetica Neue, Helvetica, Arial, sans-serif;*/
+  text-shadow: 0 -1px 0 #354C8C;
+}
+.loginBtn--facebook:before {
+  border-right: #364e92 1px solid;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_facebook.png') 6px 6px no-repeat;
+}
+.loginBtn--facebook:hover,
+.loginBtn--facebook:focus {
+  background-color: #5B7BD5;
+  background-image: linear-gradient(#5B7BD5, #4864B1);
+}
+
+
+/* Google */
+.loginBtn--google {
+  /*font-family: "Roboto", Roboto, arial, sans-serif;*/
+  background: #DD4B39;
+}
+.loginBtn--google:before {
+  border-right: #BB3F30 1px solid;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_google.png') 6px 6px no-repeat;
+}
+.loginBtn--google:hover,
+.loginBtn--google:focus {
+  background: #E74B37;
+}
+
+
+          .div1 {
+          position: relative;
+          margin-top:60px;
+          margin-left:10px;
+          left: 0.5px;
+            width: 300px;
+            height: 104.5px;
+            border: 0px solid gray;
+            box-sizing: border-box;
+            color: rgba(225,225,225,.1);
+            background-image: url(2.png);
+            background-repeat: repeat-x;
+            -webkit-background-clip: text;
+            animation: animate 15s linear infinite;
+         }
+
+         @keyframes animate {
+
+         	0%{
+         		background-position: left 10px top 0px;
+         	}
+         	40%{
+         		background-position: left 800px top 10px;
+         	}
+         }
+
+         .div2 {
+          position: absolute;
+          margin-top:1px;
+          margin-left:18px;
+          left: 0.5px;
+          top: 180px;
+          width: 300px;
+          height: 30px;
+          border: 0px solid gray;
+          box-sizing: border-box;
+          color: rgba(225,225,225,.1);
+            background-image: url(2.png);
+            background-repeat: repeat-x;
+            -webkit-background-clip: text;
+            animation: animate 15s linear infinite;
+         }
+
+       
+  ul{
+      list-style:none; 
+    }
+  ul li{
+    background-color: rgba(1,1,1,0.1);
+    width:140px;
+    border:1px;
+    font-size:18px;
+    height:50px;
+    line-height:50px;
+    text-align:center;
+    float:left;
+}
+
+ ul li li li{
+    width:140px;
+    border:1px;
+    font-size:18px;
+    height:50px;
+    line-height:50px;
+    text-align:center;
+    }
+ul: hover{
+  background-color:yellow;
+ }
+ul li: hover{
+  background-color:yellow;
+   
+}
+   ul li li li: hover{
+   background-color:yellow;
+}
+
+
+ul ul{
+display:none;
+}
+
+ul li:hover>ul{
+display:block;
+}
+ul ul ul{
+margin-left:150px;
+top:0px;
+position:absolute;
+}
+
+
+
+a:link, a:visited { 
+    color:white;
+    text-decoration: none;
+    cursor: auto;
+
+}
+
+a:link:active, a:visited:active { 
+    color: yellow;
+}
+
+
+         .column {
+         	float: left;
+         	width=50%;
+         	padding: 5px;
+         	height: 60px;
+         }
+
+         .row:after {
+         	content: "";
+         	display: table;
+         	clear: both;
+         }
+
+         .round{
+         	border-radius: 4px;
+         	height: 0.8cm;
+         	width: 6.52cm;
+         }
+
+         .round1{
+         	border-radius: 4px;
+         	height: 0.6cm;
+         	width: 2cm;
+         }
+
+         input[type=submit], select {
+         width: 100%;
+         padding: 8px 16px;
+         margin: 8px 0;
+         display: inline-block;
+         border: 1px solid #ccc;
+         border-radius: 4px;
+         box-sizing: border-box;
+     }
+         input[type=submit] {
+         width: 30%;
+         background-color: #4CAF50;
+         color: white;
+         padding: 14px 20px;
+         margin: 8px 0;
+         border: none;
+         border-radius: 4px;
+         cursor: pointer;
+     }
+
+         #panel, #flip {
+         	padding: 1px;
+         	text-align: left
+         	border: solid 1px #c3c3c3;
+         }
+
+         #panel {
+         	padding: 10px;
+         	display: none;
+         }
+
+         div.a{
+         	text-align: left;
+         }
+
+         .page1{
+         	background-image: url(via.png);
+         	margin-top:150px;
+         }
+
+         .page2{
+         	background-image: url(why.jpg);
+         	margin-top:200px;
+         }
+
+         .div3 {
+         	position: relative;
+         	left: 0px;
+            width: 1400px;
+            height: 100px;
+            border: 2px solid black;
+            box-sizing: border-box;
+         }
+
+         .button {
+         	left: 1px;
+         	box-sizing: border-box;
+          position: relative;
+          /* width: 13em;  - apply for fixed size */
+          margin: 0.2em;
+          padding: 0 26px 0 41px;
+          border: none;
+          text-align: left;
+          line-height: 34px;
+          white-space: nowrap;
+          border-radius: 0.2em;
+          font-size: 16px;
+          color: #FFF;
+
+          background-color: #4C69BA;
+          background-image: linear-gradient(#4C69BA, #3B55A0);
+         }
+
+
+         .bottomright {
+         position: absolute;
+         bottom: 8px;
+         right: 16px;
+         font-size: 18px;
+         }
+
+
+         input[type=submit]:hover {
+         background-color: #45a049;
+
+
+           
+  </style>
+
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+     <script> 
+     $(document).ready(function(){
+     $("button").click(function(){
+     $("#panel").slideToggle("slow");
+    });
+});
+</script>
+
+
+</head>
+
+<body>
+<div class="scrollmenu">
+	<ul>
+<li><a href="#home" onclick="javascript.demo();">Home</a></li>
+   <li><a href="#news" > News</a>
+     <ul>
+       <li><a href="#link1">Link 4</a></li>
+       <li><a href="#link2">Link 2</a></li>
+       <li><a href="#link3">Link 3</a></li>
+     </ul>
+   </li>
+   
+   <li><a href="#deal">Deals and Offers</a>
+     <ul>
+       <li><a href="#link1">Link 4</a></li>
+       <li><a href="#link2">Link 2</a></li>
+       <li><a href="#link3">Link 3</a></li>
+     </ul>
+   </li>
+ 
+ <li><a href="#support">Support</a>
+     <ul>
+       <li><a href="#link1">Link 4</a></li>
+       <li><a href="#link2">Link 2</a></li>
+       <li><a href="#link3">Link 3</a></li>
+     </ul>
+   </li>
+
+
+ <li><a href="#book">Cancellations..</a>
+     <ul>
+       <li><a href="#link1">Link 4</a></li>
+       <li><a href="#link2">Link 2</a></li>
+       <li><a href="#link3">Link 3</a></li>
+     </ul>
+   </li>
+
+
+ <li><a href="#refund">Booking Status..</a>
+     <ul>
+       <li><a href="#link1">Link 4</a></li>
+       <li><a href="#link2">Link 2</a></li>
+       <li><a href="#link3">Link 3</a></li>
+     </ul>
+   </li>
+
+
+ <li><a href="#contact">Download App</a>
+     <ul>
+       <li><a href="#link1">IOS</a></li>
+       <li><a href="#link2">Android</a></li>
+       <li><a href="#link3">Windows</a></li>
+     </ul>
+   </li>
+  <li><a href="#mytrip">More</a>
+     <ul>
+       <li><a href="#link1">Contact Us</a></li>
+       <li><a href="#link2">Feedbacks</a></li>
+       <li><a href="#link3">Report Spam</a></li>
+     </ul>
+   </li>
+<li><a href="#signin">SignIn</a>
+     <ul>
+       <li><button class="loginBtn loginBtn--facebook">
+  Facebook
+</button></li>
+       <li><button class="loginBtn loginBtn--google">
+  Google +
+</button></li>
+     </ul>
+   </li>
+</ul>
+</div>
+<script type="text/javascript">
+	function demo() {
+
+	}
+</script>
+<br>
+         <h1 class="div1"; style="font-size: 70px;"> GO-FLY</h1>
+         <h2 class="div2"; style="font-size: 20px;"> A SMART INDIA INITIATIVE</h2>
+
+
+         <iframe class="bottomright" scrolling="no" frameborder="no" clocktype="html5" style="overflow:hidden;border:0;margin:0;padding:0;width:120px;height:40px;"src="https://www.clocklink.com/html5embed.php?clock=004&timezone=India_NewDelhi&color=orange&size=120&Title=&Message=&Target=&From=2018,1,1,0,0,0&Color=orange"></iframe>
+
+
+</body>
+
+
+<p style="font-weight: bolder;" class="a">
+      BOOK YOUR FLIGHTS
+  </p>
+<body>
+
+	<div class="row">
+	<form action="/action_page.php">
+  <div class="column">
+  <br for="fname">FROM </br>
+  <select id="fname" name="fname" placeholder="Choose from list">
+  	<option value="CHOOSE">CHOOSE ONE FROM THE LIST</option>
+    <option value="new delhi">NEW DELHI</option>
+  	<option value="mumbai">MUMBAI</option>
+  	<option value="kolkata">KOLKATA</option>
+  	<option value="chennai">CHENNAI</option>
+  	<option value="amritsar">AMRITSAR</option>
+  	<option value="hyderabad">HYDERABAD</option>
+  	<option value="bangalore">BANGALORE</option>
+  </select>
+</div>
+
+<div class="column">
+
+  <br for="fname">TO</br> 
+  <select id="fname" name="fname" placeholder="Choose from list">
+  	<option value="CHOOSE">CHOOSE ONE FROM THE LIST</option>
+  	<option value="new delhi">NEW DELHI</option>
+  	<option value="mumbai">MUMBAI</option>
+  	<option value="kolkata">KOLKATA</option>
+  	<option value="chennai">CHENNAI</option>
+  	<option value="amritsar">AMRITSAR</option>
+  	<option value="hyderabad">HYDERABAD</option>
+  	<option value="bangalore">BANGALORE</option>
+  </select>
+</div>
+</form>
+</div>
+
+<div class="row">
+	<div class="column">
+ 	<br class="mylinespacing";>DEPARTURE: </br>
+  	<input class="round"; type="date" id="datepicker" maxlength="15" size="15">
+</div>
+
+<div class="column">
+  	<br class="mylinespacing";>RETURN: </br>
+  	<input class="round"; type="date" id="datepicker" maxlength="15" size="15">
+</div>
+</div>
+
+<div class="row">
+	<div class="column">
+        <br for="name" class="mylinespacing";>ADULTS    </br>
+        <input class="round1"; type="text" name="adults" id="adults" value="0" maxlength="2" size="2">
+    </div>
+
+    <div class="column">
+        <br for="name" class="mylinespacing";>CHILDREN </br>
+        <input class="round1"; type="text" name="children" id="children" value="0" maxlength="2" size="2">
+    </div>
+
+    <div class="column">
+        <br for="name" class="mylinespacing";>INFANTS   </br>
+        <input class="round1"; type="text" name="infants" id="infants" value="0" maxlength="2" size="2">
+    </div>
+</div>
+<br>
+<button class="button">MORE OPTIONS</button>
+<div id="panel">
+	<div class="row">
+	<div class="column">
+		<br for="name" class="mylinespacing";>PREFERRED AIRLINE</br>
+    <select id="fname" name="fname" placeholder="Choose from list">
+  	<option value="CHOOSE">ALL</option>
+  	<option value="new delhi">AIR INDIA</option>
+  	<option value="mumbai">JET AIRWAYS</option>
+  	<option value="mumbai">VISTARA</option>
+  	<option value="new delhi">INDIGO</option>
+  	<option value="mumbai">SPICE JET</option>
+  	<option value="mumbai">GO-AIR</option>
+    </select>
+	</div>
+
+	<div class="column">
+		<br for="name" class="mylinespacing";>CLASS</br>
+    <select id="fname" name="fname" placeholder="Choose from list">
+  	<option value="CHOOSE">ALL</option>
+  	<option value="new delhi">ECONOMY</option>
+  	<option value="mumbai">BUSINESS</option>
+  	<option value="mumbai">PREMIUM ECONOMY</option>
+    </select>
+	</div>
+
+	<div class="column">
+		<br for="name" class="mylinespacing";>ROUTING</br> 
+    <select id="fname" name="fname" placeholder="Choose from list">
+  	<option value="CHOOSE">ALL</option>
+  	<option value="new delhi">DIRECT FLIGHTS</option>
+  	<option value="mumbai">NON STOP DIRECT FLIGHTS</option>
+  	<option value="mumbai">SINGLE CONNECTING</option>
+    </select>
+	</div>
+</div>
+
+</div>
+
+<br>
+  <input type="submit" value="SUBMIT">
+  <div>
+  <br><br><br><br><br>
+
+  <div class= "page1">
+  	<br>
+  	<br><br><br><br><br>
+
+  </div>
+
+</div>
+
+</body>
+
+
+
+</html>
